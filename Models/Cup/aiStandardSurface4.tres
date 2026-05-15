@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ds7akvt85lg54"]
+
+[ext_resource type="Texture2D" uid="uid://3rjbg6dpwf6t" path="res://Models/Cup/cup_Image_0.png" id="1_y8rdu"]
+[ext_resource type="Texture2D" uid="uid://2s7efe4mwe6h" path="res://Models/Cup/cup_Image_1.png" id="2_yiyii"]
+[ext_resource type="Texture2D" uid="uid://ccj8nnr8h1jrh" path="res://Models/Cup/cup_Image_2.png" id="3_iwcib"]
+
+[resource]
+resource_name = "aiStandardSurface4"
+cull_mode = 2
+albedo_texture = ExtResource("1_y8rdu")
+metallic = 1.0
+metallic_texture = ExtResource("2_yiyii")
+metallic_texture_channel = 2
+roughness = 0.0
+roughness_texture = ExtResource("2_yiyii")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_iwcib")
+ao_enabled = true
+ao_texture = ExtResource("2_yiyii")

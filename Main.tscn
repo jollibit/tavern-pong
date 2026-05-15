@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://b821myv7hqira"]
 
+[ext_resource type="PackedScene" uid="uid://4j1wbjgc22pd" path="res://Models/Slowpoke/slowpoke.glb" id="1_03owx"]
 [ext_resource type="PackedScene" uid="uid://depe4mkvxygfy" path="res://Prefabs/player.tscn" id="1_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://cimtv63a1no3w" path="res://Prefabs/light_switch.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://c5ey0ybs6ajg2" path="res://Prefabs/pong_table.tscn" id="4_fos0i"]
-[ext_resource type="PackedScene" uid="uid://b61xtydxfix4v" path="res://Models/Bar/Bar.fbx" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://b4erv07tc86d3" path="res://Models/Cup/cup.glb" id="4_trn2v"]
 [ext_resource type="PackedScene" uid="uid://554t1cpy28vf" path="res://Prefabs/pong_highscore_board.tscn" id="6_lgr22"]
+[ext_resource type="PackedScene" uid="uid://d1o2ro0ptvn3y" path="res://Models/Bar/bar.glb" id="6_wkp8b"]
 [ext_resource type="LightmapGIData" uid="uid://bllk55dguwav" path="res://Main.lmbake" id="7_lgr22"]
 [ext_resource type="PackedScene" uid="uid://di52w5f0ajhe0" path="res://Models/Keller/keller.glb" id="7_trn2v"]
+[ext_resource type="PackedScene" uid="uid://prblwm7aoo20" path="res://Models/Flashlight/old_flashlight.glb" id="10_wkp8b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glv2v"]
 size = Vector3(1.9874268, 0.1361084, 1.9873657)
@@ -36,6 +39,9 @@ volumetric_fog_density = 0.1
 
 [node name="Environment" type="Node3D" parent="." unique_id=77870571]
 
+[node name="slowpoke" parent="Environment" unique_id=1617857132 instance=ExtResource("1_03owx")]
+transform = Transform3D(0.72167563, 0, 0.6922314, 0, 1, 0, -0.6922314, 0, 0.72167563, -1.5518671, 0.6365823, 0.2238571)
+
 [node name="Floor" type="StaticBody3D" parent="Environment" unique_id=1340942476]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 
@@ -46,8 +52,53 @@ shape = SubResource("BoxShape3D_glv2v")
 [node name="Floor" type="MeshInstance3D" parent="Environment/Floor" unique_id=783853190]
 mesh = SubResource("PlaneMesh_rxg2q")
 
-[node name="Bar2" parent="Environment" unique_id=1672977682 instance=ExtResource("6_3dxm6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9141588, 0.033402324, 2.4949365)
+[node name="keller" parent="Environment" unique_id=1640700994 instance=ExtResource("7_trn2v")]
+transform = Transform3D(-0.99994105, 0, 0.010873266, 0, 1, 0, -0.010873266, 0, -0.99994105, 1.2300671, 1.6362563, 2.4969232)
+
+[node name="cup2" parent="Environment" unique_id=1857989497 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92803043, 0.63132, 0.29494724)
+
+[node name="cup" parent="Environment" unique_id=931638852 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0077456, 0.6260187, 0.6448557)
+
+[node name="cup3" parent="Environment" unique_id=645994826 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1740971, 0.6260187, 0.5742775)
+
+[node name="cup4" parent="Environment" unique_id=95603098 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.971696, 0.7144834, 0.26736715)
+
+[node name="cup5" parent="Environment" unique_id=1140148506 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97182226, 0.6260187, -0.1160565)
+
+[node name="cup6" parent="Environment" unique_id=169085295 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.98117065, 0.6292809, 0.23359573)
+
+[node name="cup7" parent="Environment" unique_id=2010017604 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8051281, 0.6260187, 0.90261567)
+
+[node name="cup8" parent="Environment" unique_id=1249991492 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5838654, 0.62601864, 0.37977844)
+
+[node name="cup13" parent="Environment" unique_id=1230169558 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78381693, 0.8130765, -1.9358683)
+
+[node name="cup14" parent="Environment" unique_id=1656654198 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6809081, 0.8130765, -1.9566197)
+
+[node name="cup9" parent="Environment" unique_id=1102829934 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6535925, 0.6260187, 0.5671406)
+
+[node name="cup10" parent="Environment" unique_id=1497905885 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7983054, 0.6260187, 0.3504066)
+
+[node name="cup11" parent="Environment" unique_id=73113421 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.979531, 0.62601876, 0.7707859)
+
+[node name="cup12" parent="Environment" unique_id=1116041879 instance=ExtResource("4_trn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0945811, 0.62601876, 0.68238324)
+
+[node name="bar" parent="Environment" unique_id=1864575919 instance=ExtResource("6_wkp8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9036341, 0.04549718, 2.5430393)
 
 [node name="Lighting" type="Node" parent="." unique_id=1632186570]
 
@@ -70,11 +121,25 @@ transform = Transform3D(0.5332604, -0.52390885, 0.6641934, 6.7758896e-09, 0.7851
 light_color = Color(1, 0.96257323, 0.8763216, 1)
 shadow_enabled = true
 
-[node name="LightSwitch" parent="." unique_id=1345264570 instance=ExtResource("4_cm0pq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2254522, 0.25773293, -2.5261903)
+[node name="SpotLight3D" type="SpotLight3D" parent="Lighting" unique_id=647841179]
+transform = Transform3D(0.21750036, 0.079694405, 0.9728013, -0.01738887, 0.9968194, -0.07777419, -0.97590536, 0, 0.21819435, -0.72366273, 0.6414041, 0.1161226)
+light_energy = 10.0
+shadow_enabled = true
 
 [node name="Player" parent="." unique_id=4255370 instance=ExtResource("1_cm0pq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="LightSwitch" parent="." unique_id=1345264570 instance=ExtResource("4_cm0pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2254522, 0.25773293, -2.5261903)
+
+[node name="PongTable2" parent="." unique_id=1148686249 instance=ExtResource("4_fos0i")]
+transform = Transform3D(0.0098435655, 0, 0.99995154, 0, 1, 0, -0.99995154, 0, 0.0098435655, -1.5401846, 0.0037199855, 2.1499126)
+
+[node name="PongTable" parent="." unique_id=576180751 instance=ExtResource("4_fos0i")]
+transform = Transform3D(0.022966467, 0, -0.99973625, 0, 1, 0, 0.99973625, 0, 0.022966467, 3.693976, 0.100984335, 0.21858847)
+
+[node name="PongHighscoreBoard" parent="." unique_id=2044088925 instance=ExtResource("6_lgr22")]
+transform = Transform3D(0.94253075, 0, 0.3341194, 0, 1, 0, -0.3341194, 0, 0.94253075, -1.1977648, 0.7733925, -1.9014237)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=340373464]
 
@@ -99,20 +164,20 @@ text = "Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PongTable2" parent="." unique_id=1148686249 instance=ExtResource("4_fos0i")]
-transform = Transform3D(0.0098435655, 0, 0.99995154, 0, 1, 0, -0.99995154, 0, 0.0098435655, -1.5401846, 0.0037199855, 2.1499126)
-
-[node name="PongTable" parent="." unique_id=576180751 instance=ExtResource("4_fos0i")]
-transform = Transform3D(0.022966467, 0, -0.99973625, 0, 1, 0, 0.99973625, 0, 0.022966467, 3.693976, 0.100984335, 0.21858847)
-
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1413473351]
+bounces = 10
+directional = true
+interior = true
 light_data = ExtResource("7_lgr22")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=327569238]
 environment = SubResource("Environment_03owx")
 
-[node name="PongHighscoreBoard" parent="." unique_id=2044088925 instance=ExtResource("6_lgr22")]
-transform = Transform3D(0.94253075, 0, 0.3341194, 0, 1, 0, -0.3341194, 0, 0.94253075, -1.1977648, 0.7733925, -1.9014237)
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=617988048]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0462646, 1.4842148, -0.1648407)
+size = Vector3(6.062744, 3.2612457, 5.486786)
+interior = true
+enable_shadows = true
 
-[node name="keller" parent="." unique_id=1640700994 instance=ExtResource("7_trn2v")]
-transform = Transform3D(-0.99994105, 0, 0.010873266, 0, 1, 0, -0.010873266, 0, -0.99994105, 1.2300671, 1.6362563, 2.4969232)
+[node name="Sketchfab_Scene" parent="." unique_id=731715343 instance=ExtResource("10_wkp8b")]
+transform = Transform3D(-0.023362622, -0.9996507, 0.012359793, 0.9972809, -0.02416806, -0.06961916, 0.06989351, 0.0106996875, 0.9974972, -0.6128059, 0.62300384, 0.092960864)
