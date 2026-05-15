@@ -2,7 +2,7 @@ extends Node3D
 
 
 @onready var pongs = get_tree().get_nodes_in_group("pong")
-@onready var label = $HighscoreLabel
+@onready var label = $HighscoreLabel.mesh
  
 var highscore := 0
 

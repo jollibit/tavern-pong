@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b61xtydxfix4v" path="res://Models/Bar/Bar.fbx" id="6_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://554t1cpy28vf" path="res://Prefabs/pong_highscore_board.tscn" id="6_lgr22"]
 [ext_resource type="LightmapGIData" uid="uid://bllk55dguwav" path="res://Main.lmbake" id="7_lgr22"]
+[ext_resource type="PackedScene" uid="uid://di52w5f0ajhe0" path="res://Models/Keller/keller.glb" id="7_trn2v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glv2v"]
 size = Vector3(1.9874268, 0.1361084, 1.9873657)
@@ -29,6 +30,7 @@ glow_enabled = true
 glow_bloom = 0.1
 fog_enabled = true
 fog_light_color = Color(0.6467432, 0.47725153, 0.46613622, 1)
+volumetric_fog_density = 0.1
 
 [node name="Main" type="Node3D" unique_id=862154052]
 
@@ -110,4 +112,7 @@ light_data = ExtResource("7_lgr22")
 environment = SubResource("Environment_03owx")
 
 [node name="PongHighscoreBoard" parent="." unique_id=2044088925 instance=ExtResource("6_lgr22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5240048, -2.062727)
+transform = Transform3D(0.94253075, 0, 0.3341194, 0, 1, 0, -0.3341194, 0, 0.94253075, -1.1977648, 0.7733925, -1.9014237)
+
+[node name="keller" parent="." unique_id=1640700994 instance=ExtResource("7_trn2v")]
+transform = Transform3D(-0.99994105, 0, 0.010873266, 0, 1, 0, -0.010873266, 0, -0.99994105, 1.2300671, 1.6362563, 2.4969232)

@@ -1,8 +1,33 @@
 [gd_scene format=3 uid="uid://554t1cpy28vf"]
 
 [ext_resource type="Script" uid="uid://dcojgt0halryb" path="res://Scripts/Pong/pong_highscore_board.gd" id="1_qoxtu"]
+[ext_resource type="PackedScene" uid="uid://ccnhnoeyqwa45" path="res://Models/TV/TV.glb" id="2_x2v3t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2v3t"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 5.0
+emission_on_uv2 = true
+
+[sub_resource type="TextMesh" id="TextMesh_f81fj"]
+material = SubResource("StandardMaterial3D_x2v3t")
+text = "Todays Highscore"
+font_size = 7
+depth = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qoxtu"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 5.0
+emission_on_uv2 = true
+
+[sub_resource type="TextMesh" id="TextMesh_qoxtu"]
+material = SubResource("StandardMaterial3D_qoxtu")
+text = "0"
+depth = 0.01
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fos0i"]
+shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3dxm6"]
@@ -10,16 +35,24 @@ albedo_color = Color(0, 0, 0, 1)
 [node name="PongHighscoreBoard" type="Node3D" unique_id=2044088925]
 script = ExtResource("1_qoxtu")
 
-[node name="HighscoreText" type="Label3D" parent="." unique_id=1137473579]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11526966, 0.0009999275)
-text = "Todays Highscore"
-font_size = 16
+[node name="HighscoreText" type="MeshInstance3D" parent="." unique_id=1392942929]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5344369, 0.053287223)
+mesh = SubResource("TextMesh_f81fj")
 
-[node name="HighscoreLabel" type="Label3D" parent="." unique_id=1410495944]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0736779, 0.001999855)
-text = "0"
+[node name="HighscoreLabel" type="MeshInstance3D" parent="." unique_id=1163354157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37374124, 0.053287223)
+mesh = SubResource("TextMesh_qoxtu")
 
 [node name="HighscoreScreen" type="MeshInstance3D" parent="." unique_id=1704878372]
-transform = Transform3D(0.5, 0, 0, 0, -8.742278e-09, -0.2, 0, 0.2, -8.742278e-09, 0, 0, 0)
+transform = Transform3D(0.3338354, 0, 0, 0, -8.742278e-09, -0.2633574, 0, 0.2, -1.1511718e-08, -0.02035153, 0.41936088, 0.057475775)
 material_override = SubResource("StandardMaterial3D_fos0i")
 mesh = SubResource("PlaneMesh_3dxm6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=233532446]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41936088, 0.11584003)
+light_energy = 0.3
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="TV" parent="." unique_id=2082566426 instance=ExtResource("2_x2v3t")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.04900384, -0.27641407, -0.20981586)
