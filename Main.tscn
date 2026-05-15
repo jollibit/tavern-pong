@@ -16,12 +16,15 @@ size = Vector3(1.9874268, 0.1361084, 1.9873657)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rxg2q"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_wkp8b"]
+size = Vector3(5.8341675, 3.0054016, 0.46209717)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm0pq"]
 bg_color = Color(0, 0, 0, 0.5019608)
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_lgr22"]
-turbidity = 277.36
-sun_disk_scale = 124.75
+turbidity = 1000.0
+sun_disk_scale = 360.0
 
 [sub_resource type="Sky" id="Sky_trn2v"]
 sky_material = SubResource("PhysicalSkyMaterial_lgr22")
@@ -33,6 +36,7 @@ glow_enabled = true
 glow_bloom = 0.1
 fog_enabled = true
 fog_light_color = Color(0.6467432, 0.47725153, 0.46613622, 1)
+fog_sky_affect = 0.0
 volumetric_fog_density = 0.1
 
 [node name="Main" type="Node3D" unique_id=862154052]
@@ -99,6 +103,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0945811, 0.62601876, 0.6823
 
 [node name="bar" parent="Environment" unique_id=1864575919 instance=ExtResource("6_wkp8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9036341, 0.04549718, 2.5430393)
+
+[node name="Collider" type="Node3D" parent="Environment" unique_id=712545808]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/Collider" unique_id=46943440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2231631, 0, 3.2628133)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Collider/StaticBody3D" unique_id=172691340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18737793, 1.5017853, -0.4947815)
+shape = SubResource("BoxShape3D_wkp8b")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Environment/Collider" unique_id=1054176310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2231631, 0, -2.524643)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Collider/StaticBody3D2" unique_id=370554988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18737793, 1.5017853, -0.4947815)
+shape = SubResource("BoxShape3D_wkp8b")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Environment/Collider" unique_id=166263971]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.6765916, 0, 0.26379275)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Collider/StaticBody3D3" unique_id=409295439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13784792, 1.5017853, -0.49478173)
+shape = SubResource("BoxShape3D_wkp8b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/Collider/StaticBody3D3" unique_id=737021507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38769162, 1.5017853, 5.8210735)
+shape = SubResource("BoxShape3D_wkp8b")
+
+[node name="Sketchfab_Scene" parent="Environment" unique_id=731715343 instance=ExtResource("10_wkp8b")]
+transform = Transform3D(-0.023362622, -0.9996507, 0.012359793, 0.9972809, -0.02416806, -0.06961916, 0.06989351, 0.0106996875, 0.9974972, -0.6128059, 0.62300384, 0.092960864)
 
 [node name="Lighting" type="Node" parent="." unique_id=1632186570]
 
@@ -178,6 +212,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0462646, 1.4842148, -0.1648
 size = Vector3(6.062744, 3.2612457, 5.486786)
 interior = true
 enable_shadows = true
-
-[node name="Sketchfab_Scene" parent="." unique_id=731715343 instance=ExtResource("10_wkp8b")]
-transform = Transform3D(-0.023362622, -0.9996507, 0.012359793, 0.9972809, -0.02416806, -0.06961916, 0.06989351, 0.0106996875, 0.9974972, -0.6128059, 0.62300384, 0.092960864)
