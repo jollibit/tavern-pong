@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var speed := 420.0
+@export var speed := 0#420.0
 @export var dead_zone := 10.0
 @export var reaction_delay := 0.2
 

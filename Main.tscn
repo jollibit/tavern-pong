@@ -97,7 +97,10 @@ text = "Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PongTable" parent="." unique_id=1148686249 instance=ExtResource("4_fos0i")]
+[node name="PongTable2" parent="." unique_id=1148686249 instance=ExtResource("4_fos0i")]
+transform = Transform3D(0.0098435655, 0, 0.99995154, 0, 1, 0, -0.99995154, 0, 0.0098435655, -1.5401846, 0.0037199855, 2.1499126)
+
+[node name="PongTable" parent="." unique_id=576180751 instance=ExtResource("4_fos0i")]
 transform = Transform3D(0.022966467, 0, -0.99973625, 0, 1, 0, 0.99973625, 0, 0.022966467, 3.693976, 0.100984335, 0.21858847)
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=1413473351]
