@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c5ey0ybs6ajg2"]
+
+[ext_resource type="Script" uid="uid://bwvqwlou5bv5m" path="res://Scripts/pongtable_interactable.gd" id="1_aki48"]
+[ext_resource type="Script" uid="uid://cydolou0af3tg" path="res://Scripts/pong_screen.gd" id="2_wn6ic"]
+[ext_resource type="PackedScene" uid="uid://dthf08cn7ytby" path="res://Models/Arcade/Arcade.fbx" id="3_23nox"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uu6xs"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cm0pq"]
+
+[sub_resource type="GDScript" id="GDScript_cm0pq"]
+script/source = "extends SubViewport
+"
+
+[node name="PongTable" type="StaticBody3D" unique_id=1148686249]
+transform = Transform3D(0.022966467, 0, -0.99973625, 0, 1, 0, 0.99973625, 0, 0.022966467, 0, 0, 0)
+script = ExtResource("1_aki48")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1457742797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5050833, 0)
+shape = SubResource("BoxShape3D_uu6xs")
+
+[node name="Screen" type="MeshInstance3D" parent="." unique_id=1421108246]
+transform = Transform3D(0.3, 0, 0, 0, 0.14742883, -0.14333117, 0, 0.4777706, 0.044228643, 0, 1.074478, -0.08790447)
+mesh = SubResource("PlaneMesh_cm0pq")
+script = ExtResource("2_wn6ic")
+
+[node name="CameraAnchor" type="Node3D" parent="Screen" unique_id=257663563]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -4, -1.7484555e-07, 0, 0.98, 0)
+
+[node name="PongViewport" type="SubViewport" parent="Screen" unique_id=1620705701]
+physics_object_picking = true
+size = Vector2i(1024, 512)
+size_2d_override = Vector2i(1024, 512)
+size_2d_override_stretch = true
+script = SubResource("GDScript_cm0pq")
+
+[node name="Arcade" parent="." unique_id=1830248664 instance=ExtResource("3_23nox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0)

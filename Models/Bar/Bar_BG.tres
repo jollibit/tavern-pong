@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bs4xugw4plupp"]
+
+[ext_resource type="Texture2D" uid="uid://b0gwlc345r5uj" path="res://Models/Bar/Bar_export_Bar_BG_BaseColor.png" id="1_dg1x5"]
+[ext_resource type="Texture2D" uid="uid://srfu3nckcvpc" path="res://Models/Bar/Bar_export_Bar_BG_Normal.png" id="2_0asm8"]
+[ext_resource type="Texture2D" uid="uid://bbde4tbkxiy0o" path="res://Models/Bar/Bar_export_Bar_BG_Roughness.png" id="2_t8y35"]
+
+[resource]
+resource_name = "Bar_BG"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+albedo_texture = ExtResource("1_dg1x5")
+roughness_texture = ExtResource("2_t8y35")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+normal_enabled = true
+normal_texture = ExtResource("2_0asm8")

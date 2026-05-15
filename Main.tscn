@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://b821myv7hqira"]
+
+[ext_resource type="PackedScene" uid="uid://depe4mkvxygfy" path="res://Prefabs/player.tscn" id="1_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://cimtv63a1no3w" path="res://Prefabs/light_switch.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://c5ey0ybs6ajg2" path="res://Prefabs/pong_table.tscn" id="4_fos0i"]
+[ext_resource type="PackedScene" uid="uid://b61xtydxfix4v" path="res://Models/Bar/Bar.fbx" id="6_3dxm6"]
+[ext_resource type="LightmapGIData" uid="uid://bllk55dguwav" path="res://Main.lmbake" id="7_lgr22"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_glv2v"]
+size = Vector3(1.9874268, 0.1361084, 1.9873657)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rxg2q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm0pq"]
+bg_color = Color(0, 0, 0, 0.5019608)
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_lgr22"]
+turbidity = 277.36
+sun_disk_scale = 124.75
+
+[sub_resource type="Sky" id="Sky_trn2v"]
+sky_material = SubResource("PhysicalSkyMaterial_lgr22")
+
+[sub_resource type="Environment" id="Environment_03owx"]
+background_mode = 2
+sky = SubResource("Sky_trn2v")
+glow_enabled = true
+glow_bloom = 0.1
+fog_enabled = true
+fog_light_color = Color(0.6467432, 0.47725153, 0.46613622, 1)
+
+[node name="Main" type="Node3D" unique_id=862154052]
+
+[node name="Environment" type="Node3D" parent="." unique_id=77870571]
+
+[node name="Floor" type="StaticBody3D" parent="Environment" unique_id=1340942476]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Floor" unique_id=605314683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0154418945, -0.07098389, 0.000579834)
+shape = SubResource("BoxShape3D_glv2v")
+
+[node name="Floor" type="MeshInstance3D" parent="Environment/Floor" unique_id=783853190]
+mesh = SubResource("PlaneMesh_rxg2q")
+
+[node name="Bar2" parent="Environment" unique_id=1672977682 instance=ExtResource("6_3dxm6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9141588, 0.033402324, 2.4949365)
+
+[node name="Lighting" type="Node" parent="." unique_id=1632186570]
+
+[node name="Light3" type="OmniLight3D" parent="Lighting" unique_id=1053661817]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6957371, 2.6249728, -1.6126723)
+light_color = Color(1, 0.60784316, 0, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="Light2" type="OmniLight3D" parent="Lighting" unique_id=606177310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0791646, 2.6191494, -2.5018544)
+light_color = Color(1, 0.60784316, 0, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting" unique_id=1161550821]
+transform = Transform3D(0.5332604, -0.52390885, 0.6641934, 6.7758896e-09, 0.7851439, 0.61931336, -0.8459512, -0.33025527, 0.41868612, 0.08972156, 1.6506612, 1.5360247)
+light_color = Color(1, 0.96257323, 0.8763216, 1)
+shadow_enabled = true
+
+[node name="LightSwitch" parent="." unique_id=1345264570 instance=ExtResource("4_cm0pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2254522, 0.25773293, -2.5261903)
+
+[node name="Player" parent="." unique_id=4255370 instance=ExtResource("1_cm0pq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=340373464]
+
+[node name="InteractionPanel" type="Panel" parent="CanvasLayer" unique_id=1121235171]
+custom_minimum_size = Vector2(10, 50)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cm0pq")
+
+[node name="InteractionPrompt" type="Label" parent="CanvasLayer/InteractionPanel" unique_id=1836294711]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PongTable" parent="." unique_id=1148686249 instance=ExtResource("4_fos0i")]
+transform = Transform3D(0.022966467, 0, -0.99973625, 0, 1, 0, 0.99973625, 0, 0.022966467, 3.693976, 0.100984335, 0.21858847)
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1413473351]
+light_data = ExtResource("7_lgr22")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=327569238]
+environment = SubResource("Environment_03owx")

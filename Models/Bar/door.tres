@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bl0q8v452wc66"]
+
+[ext_resource type="Texture2D" uid="uid://baotmidrte22g" path="res://Models/Bar/Bar_export_door_BaseColor.png" id="1_38yjb"]
+[ext_resource type="Texture2D" uid="uid://dleopg4uu3v88" path="res://Models/Bar/Bar_export_door_Roughness.png" id="2_cqs2y"]
+[ext_resource type="Texture2D" uid="uid://dgbu3m0kwi1sn" path="res://Models/Bar/Bar_export_door_Normal.png" id="2_daiq4"]
+
+[resource]
+resource_name = "door"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.8)
+albedo_texture = ExtResource("1_38yjb")
+roughness_texture = ExtResource("2_cqs2y")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+normal_enabled = true
+normal_texture = ExtResource("2_daiq4")

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://depe4mkvxygfy"]
+
+[ext_resource type="Script" uid="uid://cedx2bgyxpggp" path="res://Scripts/player.gd" id="1_y6xdh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rxg2q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r0du0"]
+
+[node name="Player" type="CharacterBody3D" unique_id=4255370]
+script = ExtResource("1_y6xdh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=118515657]
+shape = SubResource("CapsuleShape3D_rxg2q")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=54214657]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot" unique_id=1644366242]
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=1470912650]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=348031679]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_r0du0")
+
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_interact_area_body_exited"]

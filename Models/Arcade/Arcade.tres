@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d3tyuc0dcv5ie"]
+
+[ext_resource type="Texture2D" uid="uid://r74xbpvwh1vl" path="res://Models/Arcade/Arcade_Color.png" id="1_gn6yy"]
+[ext_resource type="Texture2D" uid="uid://tyo2qskyuua" path="res://Models/Arcade/Arcade_NormalF.png" id="2_osflq"]
+
+[resource]
+resource_name = "Arcade"
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_gn6yy")
+emission_enabled = true
+emission_energy_multiplier = 5.0
+normal_enabled = true
+normal_scale = 0.0
+normal_texture = ExtResource("2_osflq")

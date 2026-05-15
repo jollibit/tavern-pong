@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://cumb58pfew47m"]
+
+[ext_resource type="Script" uid="uid://cjfakyv5wq3me" path="res://Scripts/Pong/player_paddle.gd" id="1_2fpx0"]
+[ext_resource type="Script" uid="uid://d12vglshr1s4m" path="res://Scripts/Pong/pong.gd" id="1_8ypyn"]
+[ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://icon.svg" id="1_ofbcb"]
+[ext_resource type="Script" uid="uid://c8fh0pafrm627" path="res://Scripts/Pong/color_font.gd" id="2_6v0xx"]
+[ext_resource type="Script" uid="uid://bwsmypjmh76p4" path="res://Scripts/Pong/ai_paddle.gd" id="3_6v0xx"]
+[ext_resource type="Script" uid="uid://mllltm2vhc2u" path="res://label_current_score.gd" id="3_i04b0"]
+[ext_resource type="Script" uid="uid://c5ktme8hejuti" path="res://Scripts/Pong/ball.gd" id="4_hultk"]
+
+[sub_resource type="SystemFont" id="SystemFont_hultk"]
+subpixel_positioning = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsmpk"]
+size = Vector2(20, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hultk"]
+radius = 42.296574
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ypyn"]
+size = Vector2(1024, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hultk"]
+size = Vector2(10, 512)
+
+[node name="Pong" type="Node2D" unique_id=1852695685]
+script = ExtResource("1_8ypyn")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1679774614]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=732546021]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -512.0
+offset_top = -258.0
+offset_right = 512.0
+offset_bottom = 254.0
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=910097831]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -22.0
+offset_top = -231.0
+offset_right = 25.0
+offset_bottom = -208.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_hultk")
+theme_override_font_sizes/font_size = 30
+text = "PONG"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_6v0xx")
+
+[node name="CurrentScore" type="Label" parent="." unique_id=1610825440]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -43.0
+offset_top = -187.0
+offset_right = 44.0
+offset_bottom = -145.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_hultk")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_i04b0")
+
+[node name="AI" type="StaticBody2D" parent="." unique_id=1486138148]
+position = Vector2(-300, 0)
+script = ExtResource("3_6v0xx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI" unique_id=1128504261]
+shape = SubResource("RectangleShape2D_rsmpk")
+
+[node name="ColorRect" type="ColorRect" parent="AI" unique_id=1038175114]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -64.0
+offset_right = 10.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" type="StaticBody2D" parent="." unique_id=1566597102]
+position = Vector2(300, 0)
+script = ExtResource("1_2fpx0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=155453531]
+shape = SubResource("RectangleShape2D_rsmpk")
+
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=27914053]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -64.0
+offset_right = 10.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=872460240]
+script = ExtResource("4_hultk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=449023918]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ofbcb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=2021586977]
+shape = SubResource("CircleShape2D_hultk")
+
+[node name="Bottom" type="StaticBody2D" parent="." unique_id=1044963053]
+position = Vector2(0, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=1901734205]
+shape = SubResource("RectangleShape2D_8ypyn")
+
+[node name="Top" type="StaticBody2D" parent="." unique_id=395210572]
+position = Vector2(0, -256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=889472015]
+shape = SubResource("RectangleShape2D_8ypyn")
+
+[node name="GoalRight" type="Area2D" parent="." unique_id=1039542922]
+position = Vector2(512, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalRight" unique_id=834982125]
+shape = SubResource("RectangleShape2D_hultk")
+
+[node name="GoalLeft" type="Area2D" parent="." unique_id=219167692]
+position = Vector2(-512, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoalLeft" unique_id=1692387857]
+shape = SubResource("RectangleShape2D_hultk")
+
+[connection signal="body_entered" from="GoalRight" to="." method="_on_goal_right_body_entered"]
+[connection signal="body_entered" from="GoalLeft" to="." method="_on_goal_left_body_entered"]

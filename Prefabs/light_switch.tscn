@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cimtv63a1no3w"]
+
+[ext_resource type="Script" uid="uid://b83ik6gdcikr" path="res://Scripts/lightswitch_interactable.gd" id="1_eo3gu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r0du0"]
+
+[node name="LightSwitch" type="StaticBody3D" unique_id=661165455]
+script = ExtResource("1_eo3gu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=765942614]
+shape = SubResource("SphereShape3D_r0du0")
+
+[node name="Light" type="OmniLight3D" parent="." unique_id=1899433239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1412642, 0)
+light_color = Color(1, 0.60784316, 0, 1)
+light_energy = 1.3
