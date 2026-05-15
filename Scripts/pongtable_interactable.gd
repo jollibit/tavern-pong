@@ -22,5 +22,8 @@ func _process(delta):
 
 func cancel():
 	if($Screen/PongViewport/Pong): $Screen/PongViewport/Pong.deactivate()
+	
+	current_player = null
 	current_player.exit_table_view()
+	
 	active = true
