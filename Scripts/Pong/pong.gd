@@ -11,6 +11,7 @@ var current_score := 0
 var highscore := 0
 
 func _ready() -> void:
+	add_to_group("pong")
 	cooldown_timer.one_shot = true
 	cooldown_timer.wait_time = 1
 	cooldown_timer.timeout.connect(_on_cooldown_finished)

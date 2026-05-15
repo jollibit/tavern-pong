@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://icon.svg" id="1_ofbcb"]
 [ext_resource type="Script" uid="uid://c8fh0pafrm627" path="res://Scripts/Pong/color_font.gd" id="2_6v0xx"]
 [ext_resource type="Script" uid="uid://bwsmypjmh76p4" path="res://Scripts/Pong/ai_paddle.gd" id="3_6v0xx"]
-[ext_resource type="Script" uid="uid://mllltm2vhc2u" path="res://label_current_score.gd" id="3_i04b0"]
+[ext_resource type="Script" uid="uid://mllltm2vhc2u" path="res://Scripts/Pong/label_current_score.gd" id="3_i04b0"]
 [ext_resource type="Script" uid="uid://c5ktme8hejuti" path="res://Scripts/Pong/ball.gd" id="4_hultk"]
 
 [sub_resource type="SystemFont" id="SystemFont_hultk"]

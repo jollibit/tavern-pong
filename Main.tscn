@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cimtv63a1no3w" path="res://Prefabs/light_switch.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://c5ey0ybs6ajg2" path="res://Prefabs/pong_table.tscn" id="4_fos0i"]
 [ext_resource type="PackedScene" uid="uid://b61xtydxfix4v" path="res://Models/Bar/Bar.fbx" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://554t1cpy28vf" path="res://Prefabs/pong_highscore_board.tscn" id="6_lgr22"]
 [ext_resource type="LightmapGIData" uid="uid://bllk55dguwav" path="res://Main.lmbake" id="7_lgr22"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glv2v"]
@@ -104,3 +105,6 @@ light_data = ExtResource("7_lgr22")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=327569238]
 environment = SubResource("Environment_03owx")
+
+[node name="PongHighscoreBoard" parent="." unique_id=2044088925 instance=ExtResource("6_lgr22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5240048, -2.062727)
